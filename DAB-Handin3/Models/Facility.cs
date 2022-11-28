@@ -13,8 +13,18 @@ namespace DAB_Handin3.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public int FacilityId { get; set; }
-
         [BsonElement("Name")]
         public string Name { get; set; }
+        [BsonElement("Longitude")]
+        public double Longitude { get; set; }
+        [BsonElement("Latitude")]
+        public double Latitude { get; set; }
+        [BsonElement("Type")]
+        public string Type { get; set; }
+        [BsonElement("Decription")]
+        public string Decription { get; set; }
+
+
+
     }
 }
