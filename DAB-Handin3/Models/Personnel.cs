@@ -13,6 +13,6 @@ namespace DAB_Handin3.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public int PersId { get; set; }
-
+        public List<MaintenanceLog> MaintenanceLogs { get; set; }
     }
 }

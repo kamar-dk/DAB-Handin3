@@ -16,5 +16,7 @@ namespace DAB_Handin3.Models
 
         [BsonElement("Cpr")]
         public string Cpr { get; set; }
+
+        public Activity Activity { get; set; }
     }
 }
