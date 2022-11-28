@@ -43,9 +43,9 @@ namespace DAB_Handin3.Services
 
         // Opgave 2_1
         public void GetFacilitysNameLocation()
-        {  
-            List<Facility> facilitys = GetFacilitys();
-            foreach (var facility in facilitys)
+        {
+            List<Facility> facilities = _facilitys.Find(facility => true).ToList();
+            foreach (var facility in facilities)
             {
                 Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}");
             }
@@ -58,9 +58,7 @@ namespace DAB_Handin3.Services
                 .OrderBy(facility => facility.Type)
                 .ToList();
 
-            /*List<Facility> facilities = GetFacilitys();
-            facilities.OrderBy(f => f.Type).ToList();
-            */
+            
             foreach (var facility in facilities)
             {
                 Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}, Type: {facility.Type}");
