@@ -27,15 +27,6 @@ namespace DAB_Handin3.Services
             //_facilitys.InsertOne(facility);
         }
 
-        /*
-        private IMongoCollection<T> ConnectToMongo<T>(in string collection)
-        {
-            var client = new MongoClient(connectionString);
-            var db = client.GetDatabase(databaseName);
-            return db.GetCollection<T>(collection);
-        }
-        */
-
         public List<Facility> GetFacilitys()
         {
             return _facilitys.Find(facility => true).ToList();
@@ -65,16 +56,5 @@ namespace DAB_Handin3.Services
             }
 
         }
-
-
-        /*public async Task<List<Facility>> GetAllFacilitys()
-        {
-
-            
-
-            var facilityCollection = ConnectToMongo<Facility>(FacilityCollection);
-            var results = await facilityCollection.FindAsync(_ => true);
-            return results.ToList();
-        }*/
     }
 }
