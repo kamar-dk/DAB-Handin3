@@ -32,12 +32,63 @@ namespace DAB_Handin3
         {
             DataAccess db = new DataAccess();
 
+
+            {
+                Console.WriteLine("Start");
+
+                while (true)
+                {
+                    Console.WriteLine("\n" + "SeedData Y/n)");
+                    ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
+                    if (consoleKeyInfo2.KeyChar == 'Y')
+                    {
+                        SeedData();
+                    }
+                    Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
+                    ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
+                    if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
+                    {
+                        VaelgOpgave(consoleKeyInfo.KeyChar);
+                    }
+
+                    else
+                    {
+                        return;
+                    }
+                }
+
+            }
+
             //var results = db.GetAllFacilitys();
             db.GetFacilitys().ForEach(Console.WriteLine);
             /*foreach (var result in results)
             {
                 Console.WriteLine($"{result.FacilityId}");
             }*/
+        }
+
+        static void VaelgOpgave( char c)
+        {
+            switch (c)
+            {
+                case 'a':
+                    Opgave2_1;
+                    break;
+
+                case 'b':
+                    Opgave2_2;
+                    break;
+
+                case 'c':
+                    Opgave2_3;
+                    break;
+                case 'd':
+                    Opgave3_2;
+                    break;
+                case 'e':
+                    Opgave3_3;
+                    break;
+            }
         }
     }
 }
