@@ -1,6 +1,8 @@
 ﻿using DAB_Handin3.Models;
+using DAB_Handin3.Services;
 using MongoDB.Driver;
 
+/*
 string connectionString = "mongodb://localhost:27017";
 string databaseName = "Handin3";
 string collectionName = "Facility";
@@ -19,23 +21,23 @@ foreach (var result in results.ToList())
 {
     Console.WriteLine($"{result.FacilityId}");
 }
+*/
 
 
-/*
 namespace DAB_Handin3
 {
     class Program
     {
         static void Main(string[] args)
         {
+            DataAccess db = new DataAccess();
 
-            test();
-        }
-
-        static async void test()
-        {
-            
+            //var results = db.GetAllFacilitys();
+            db.GetFacilitys().ForEach(Console.WriteLine);
+            /*foreach (var result in results)
+            {
+                Console.WriteLine($"{result.FacilityId}");
+            }*/
         }
     }
 }
-*/
