@@ -13,18 +13,23 @@ namespace DAB_Handin3.Services
     public class DataAccess
     {
         private IMongoCollection<Facility> _facilitys;
+        private IMongoCollection<Citizen> _citizens;
         private const string connectionString = "mongodb://localhost:27017";
         private const string databaseName = "Handin3";
         private const string FacilityCollection = "Facility";
+        private const string CitizenCollection = "Citizen";
 
         public DataAccess()
         {
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(databaseName);
             _facilitys = database.GetCollection<Facility>(FacilityCollection);
+            _citizens = database.GetCollection<Citizen>(CitizenCollection);
             //var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
 
             //_facilitys.InsertOne(facility);
+            var citizen = new Citizen { };
+            _citizens.InsertOne(citizen);
         }
 
         public List<Facility> GetFacilitys()
