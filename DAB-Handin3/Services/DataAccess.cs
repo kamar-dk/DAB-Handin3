@@ -22,9 +22,9 @@ namespace DAB_Handin3.Services
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(databaseName);
             _facilitys = database.GetCollection<Facility>(FacilityCollection);
-            var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
+            //var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
 
-            _facilitys.InsertOne(facility);
+            //_facilitys.InsertOne(facility);
         }
 
         /*
@@ -51,10 +51,20 @@ namespace DAB_Handin3.Services
             }
         }
 
+        // opgave2_2
         public void GetFacilitysOrdered()
         {
-            List<Facility> facilities = GetFacilitys()
-                .OrderBy<>;
+            List<Facility> facilities = _facilitys.Find(facility => true).ToList()
+                .OrderBy(facility => facility.Type)
+                .ToList();
+
+            /*List<Facility> facilities = GetFacilitys();
+            facilities.OrderBy(f => f.Type).ToList();
+            */
+            foreach (var facility in facilities)
+            {
+                Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}, Type: {facility.Type}");
+            }
 
         }
 

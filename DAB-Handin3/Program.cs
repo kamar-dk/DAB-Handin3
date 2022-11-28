@@ -68,7 +68,7 @@ namespace DAB_Handin3
                     break;
 
                 case 'b':
-                    //Opgave2_2;
+                    db.GetFacilitysOrdered();
                     break;
 
                 case 'c':
