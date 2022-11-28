@@ -19,6 +19,8 @@ foreach (var result in results.ToList())
 {
     Console.WriteLine($"{result.FacilityId}");
 }
+
+
 /*
 namespace DAB_Handin3
 {
