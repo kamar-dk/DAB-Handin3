@@ -24,6 +24,18 @@ namespace DAB_Handin3.Models
         [BsonElement("Decription")]
         public string Decription { get; set; }
 
+        public override string ToString()
+        {
+            return "Facility(" +
+                "Id:" + FacilityId + "," +
+                "Name: " + Name + "," +
+                "Longitude: " + Longitude + "," +
+                "Latitude: " + Latitude + "," +
+                "Type: " + Type + "," +
+                "Decitption: " + Decription +
+                ")";
+        }
+
 
 
     }
