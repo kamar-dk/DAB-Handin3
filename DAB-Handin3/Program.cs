@@ -26,45 +26,37 @@ foreach (var result in results.ToList())
 
 namespace DAB_Handin3
 {
-    class Program
+    public class Program
     {
+        public static DataAccess db = new DataAccess();
         static void Main(string[] args)
         {
-            DataAccess db = new DataAccess();
 
+            Console.WriteLine("Start");
 
+            while (true)
             {
-                Console.WriteLine("Start");
-
-                while (true)
+                Console.WriteLine("\n" + "SeedData Y/n)");
+                ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
+                if (consoleKeyInfo2.KeyChar == 'Y')
                 {
-                    Console.WriteLine("\n" + "SeedData Y/n)");
-                    ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
-                    if (consoleKeyInfo2.KeyChar == 'Y')
-                    {
-                        SeedData();
-                    }
-                    Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
-                    ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
-                    if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
-                    {
-                        VaelgOpgave(consoleKeyInfo.KeyChar);
-                    }
-
-                    else
-                    {
-                        return;
-                    }
+                    //SeedData();
+                }
+                Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
+                ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
+                if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
+                {
+                    VaelgOpgave(consoleKeyInfo.KeyChar);
                 }
 
+                else
+                {
+                    return;
+                }
             }
 
             //var results = db.GetAllFacilitys();
-            db.GetFacilitys().ForEach(Console.WriteLine);
-            /*foreach (var result in results)
-            {
-                Console.WriteLine($"{result.FacilityId}");
-            }*/
+
         }
 
         static void VaelgOpgave( char c)
@@ -72,22 +64,31 @@ namespace DAB_Handin3
             switch (c)
             {
                 case 'a':
-                    Opgave2_1;
+                    db.GetFacilitysNameLocation();
                     break;
 
                 case 'b':
-                    Opgave2_2;
+                    //Opgave2_2;
                     break;
 
                 case 'c':
-                    Opgave2_3;
+                    //Opgave2_3;
                     break;
                 case 'd':
-                    Opgave3_2;
+                    //Opgave3_2;
                     break;
                 case 'e':
-                    Opgave3_3;
+                    //Opgave3_3;
                     break;
+            }
+        }
+
+        public static void Opgave2_1()
+        {
+            List<Facility> results = db.GetFacilitys();
+            foreach (var result in results)
+            {
+                Console.WriteLine($"Name: {result.Name}, Latitude: {result.Latitude}, Longitude: {result.Longitude}");
             }
         }
     }

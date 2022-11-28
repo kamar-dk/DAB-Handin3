@@ -1,5 +1,7 @@
 ﻿using DAB_Handin3.Models;
+using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +40,24 @@ namespace DAB_Handin3.Services
         {
             return _facilitys.Find(facility => true).ToList();
         }
+
+        // Opgave 2_1
+        public void GetFacilitysNameLocation()
+        {  
+            List<Facility> facilitys = GetFacilitys();
+            foreach (var facility in facilitys)
+            {
+                Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}");
+            }
+        }
+
+        public void GetFacilitysOrdered()
+        {
+            List<Facility> facilities = GetFacilitys()
+                .OrderBy<>;
+
+        }
+
 
         /*public async Task<List<Facility>> GetAllFacilitys()
         {
