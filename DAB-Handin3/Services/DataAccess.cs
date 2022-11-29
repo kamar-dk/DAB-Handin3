@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace DAB_Handin3.Services
         private const string FacilityCollection = "Facility";
         private const string CitizenCollection = "Citizen";
         private const string MaintanceLogCollection = "MaintainceLog";
-        
+
+        private MongoClient client;
+        private IMongoDatabase db;
         /*public DataAccess()
         {
             var client = new MongoClient(connectionString);
@@ -29,10 +32,22 @@ namespace DAB_Handin3.Services
         } */
         public IMongoCollection<T> ConnectToMongo<T>(in string collection)
         {
-            var client = new MongoClient(connectionString);
-            var db = client.GetDatabase(databaseName);
+            client = new MongoClient(connectionString);
+            db = client.GetDatabase(databaseName);
             return db.GetCollection<T>(collection);
         }
+
+        public MongoClient GetClient()
+        {
+            return client;
+        }
+
+        public IMongoDatabase GetDatabase()
+        {
+            return db;
+        }
+
+        
 
         
         
