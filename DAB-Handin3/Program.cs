@@ -29,10 +29,15 @@ namespace DAB_Handin3
     public class Program
     {
         public static DataAccess db = new DataAccess();
+        public static FacilityService fs;
         static void Main(string[] args)
         {
 
             Console.WriteLine("Start");
+
+            fs = new FacilityService(db);
+            
+
 
             while (true)
             {
@@ -65,10 +70,11 @@ namespace DAB_Handin3
             {
                 case 'a':
                     db.GetFacilitysNameLocation();
+                    fs.GetFacilitysNameLocation();
                     break;
 
                 case 'b':
-                    db.GetFacilitysOrdered();
+                    fs.GetFacilitysOrdered();
                     break;
 
                 case 'c':

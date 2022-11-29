@@ -12,7 +12,7 @@ namespace DAB_Handin3.Services
 {
     public class DataAccess
     {
-        private IMongoCollection<Facility> _facilitys;
+        public IMongoCollection<Facility> _facilitys;
         private IMongoCollection<Citizen> _citizens;
         private const string connectionString = "mongodb://localhost:27017";
         private const string databaseName = "Handin3";
@@ -28,8 +28,6 @@ namespace DAB_Handin3.Services
             //var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
 
             //_facilitys.InsertOne(facility);
-            var citizen = new Citizen { };
-            _citizens.InsertOne(citizen);
         }
 
         public List<Facility> GetFacilitys()
@@ -47,19 +45,6 @@ namespace DAB_Handin3.Services
             }
         }
 
-        // opgave2_2
-        public void GetFacilitysOrdered()
-        {
-            List<Facility> facilities = _facilitys.Find(facility => true).ToList()
-                .OrderBy(facility => facility.Type)
-                .ToList();
-
-            
-            foreach (var facility in facilities)
-            {
-                Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}, Type: {facility.Type}");
-            }
-
-        }
+        
     }
 }
