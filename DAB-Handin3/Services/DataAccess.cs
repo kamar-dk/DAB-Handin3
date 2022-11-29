@@ -20,37 +20,18 @@ namespace DAB_Handin3.Services
         private const string FacilityCollection = "Facility";
         private const string CitizenCollection = "Citizen";
         private const string MaintanceLogCollection = "MaintainceLog";
-        /*
-        public DataAccess()
+        
+        /*public DataAccess()
         {
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(databaseName);
 
-        }
-        */
+        } */
         public IMongoCollection<T> ConnectToMongo<T>(in string collection)
         {
             var client = new MongoClient(connectionString);
             var db = client.GetDatabase(databaseName);
             return db.GetCollection<T>(collection);
-        }
-        /*
-        public List<Facility> GetFacilitys()
-        {
-            return _facilitys.Find(facility => true).ToList();
-        }
-
-        // Opgave 2_1
-        public void GetFacilitysNameLocation()
-        {
-            List<Facility> facilities = _facilitys.Find(facility => true).ToList();
-            foreach (var facility in facilities)
-            {
-                Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}");
-            }
-        }
-        */
-
-        
+        }        
     }
 }
