@@ -12,7 +12,7 @@ namespace DAB_Handin3.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int MaintenanceId { get; set; }
+        public string MaintenanceId { get; set; }
 
         [BsonElement("Description")]
         public string Description { get; set; }
