@@ -20,5 +20,10 @@ namespace DAB_Handin3.Services
             Collection = db.ConnectToMongo<Citizen>(CitizenCollection);
         }
 
+        public void CreateCitizen(Citizen citizen)
+        {
+            Collection.InsertOne(citizen);
+        }
+
     }
 }
