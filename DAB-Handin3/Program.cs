@@ -82,10 +82,10 @@ namespace DAB_Handin3
                     _activity.GetBookedFacilitiesBookingUserTime();
                     break;
                 case 'd':
-                    //Opgave3_2;
+                    _activity.GetBookingsWithParticipants();
                     break;
                 case 'e':
-                    //Opgave3_3;
+                    _facility.GetMaintenanceHistory();
                     break;
             }
         }

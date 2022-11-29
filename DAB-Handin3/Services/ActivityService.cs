@@ -31,6 +31,24 @@ namespace DAB_Handin3.Services
                 Console.WriteLine($"Booking User: {activity.Citizen.Name}, Facility Name: {activity.Facility.Name}, Timeslot: from {activity.StartTime} to {activity.EndTime}");
             }
         }
+
+        public void GetBookingsWithParticipants()
+        {
+            List<Activity> activities = Collection.Find(activity => true).ToList();
+
+            foreach (var activity in activities)
+            {
+
+
+                Console.WriteLine($"Facility Name: {activity.Facility.Name}, Timeslot: from {activity.StartTime} to {activity.EndTime}, Paticipants");
+                var temp = activity.Participants;
+
+                foreach (var act in temp)
+                {
+                    Console.WriteLine(act.Cpr);
+                }
+            }
+        }
         public void CreateActivity(Activity activity)
         {
             Collection.InsertOne(activity);

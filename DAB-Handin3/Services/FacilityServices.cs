@@ -50,5 +50,22 @@ namespace DAB_Handin3.Services
             }
 
         }
+        public void GetMaintenanceHistory()
+        {
+        
+            List<Facility> facilities = Collection.Find(facility => true).ToList();
+
+            foreach (var facility in facilities)
+            {
+                Console.WriteLine($"Facility Name: {facility.Name}, Maintenance:");
+                var temp = facility.MaintenanceLogs;
+
+                foreach (var act in temp)
+                {
+                    Console.WriteLine(act);
+                }
+            }
+            
+        }
     }
 }
