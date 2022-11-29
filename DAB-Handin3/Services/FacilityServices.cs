@@ -20,6 +20,11 @@ namespace DAB_Handin3.Services
             this.db = db;
             Collection = db.ConnectToMongo<Facility>(FacilityCollection);
         }
+        public void DropCollection()
+        {
+            var database = db.GetDatabase();
+            database.DropCollection(FacilityCollection);
+        }
 
         public void CreateFacility(Facility facility)
         {
