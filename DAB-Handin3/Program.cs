@@ -29,25 +29,25 @@ namespace DAB_Handin3
     public class Program
     {
         public static DataAccess db = new DataAccess();
-        public static FacilityService facilityService;// = new FacilityService(db);
-        public static CitizenService citizenService;// = new CitizenService(db);
-        public static ActivityService activityService;// = new ActivityService(db);
-        public static MaintenanceLogService maintenanceLogService;
-        public static ParticipantService participantService;
-        public static PersonnelService personnelService;
+        public static FacilityService _facility = new FacilityService(db);
+        public static CitizenService _citizen = new CitizenService(db);
+        public static ActivityService _activity = new ActivityService(db);
+        public static MaintenanceLogService _maintenanceLog = new MaintenanceLogService(db);
+        public static ParticipantService _participant = new ParticipantService(db);
+        public static PersonnelService _personnel = new PersonnelService(db);
 
         static void Main(string[] args)
         {
 
             Console.WriteLine("Start");
-            
-            facilityService = new FacilityService(db);
-            citizenService = new CitizenService(db);
-            activityService = new ActivityService(db);
-            maintenanceLogService = new MaintenanceLogService(db);
-            participantService = new ParticipantService(db);
-            personnelService = new PersonnelService(db);
-            
+            /*
+            _facility = new FacilityService(db);
+            _citizen = new CitizenService(db);
+            _activity = new ActivityService(db);
+            _maintenanceLog = new MaintenanceLogService(db);
+            _participant = new ParticipantService(db);
+            _personnel = new PersonnelService(db);
+            */
             Console.WriteLine("\n" + "SeedData Y/n)");
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
             if (consoleKeyInfo2.KeyChar == 'Y')
@@ -77,11 +77,11 @@ namespace DAB_Handin3
             switch (c)
             {
                 case 'a':
-                    facilityService.GetFacilitysNameLocation();
+                    _facility.GetFacilitysNameLocation();
                     break;
 
                 case 'b':
-                    facilityService.GetFacilitysOrdered();
+                    _facility.GetFacilitysOrdered();
                     break;
 
                 case 'c':
