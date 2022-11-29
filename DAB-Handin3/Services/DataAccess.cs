@@ -13,14 +13,8 @@ namespace DAB_Handin3.Services
 {
     public class DataAccess
     {
-        //public IMongoCollection<Facility> _facilitys;
-        //public IMongoCollection<Citizen> _citizens;
-        //public IMongoCollection<MaintenanceLog> _maintenanceLog;
         private const string connectionString = "mongodb://localhost:27017";
         private const string databaseName = "Handin3";
-        /*private const string FacilityCollection = "Facility";
-        private const string CitizenCollection = "Citizen";
-        private const string MaintanceLogCollection = "MaintainceLog";*/
 
         private MongoClient client;
         private IMongoDatabase db;
