@@ -18,9 +18,9 @@ namespace DAB_Handin3.Services
         //public IMongoCollection<MaintenanceLog> _maintenanceLog;
         private const string connectionString = "mongodb://localhost:27017";
         private const string databaseName = "Handin3";
-        private const string FacilityCollection = "Facility";
+        /*private const string FacilityCollection = "Facility";
         private const string CitizenCollection = "Citizen";
-        private const string MaintanceLogCollection = "MaintainceLog";
+        private const string MaintanceLogCollection = "MaintainceLog";*/
 
         private MongoClient client;
         private IMongoDatabase db;
@@ -46,11 +46,5 @@ namespace DAB_Handin3.Services
         {
             return db;
         }
-
-        
-
-        
-        
-        
     }
 }
