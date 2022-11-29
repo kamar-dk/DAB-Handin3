@@ -12,13 +12,23 @@ namespace DAB_Handin3.Services
     {
         DataAccess db;
 
-        private const string ActivityCollection = "Acticity";
+        private const string ActivityCollection = "Activity";
         private IMongoCollection<Activity> Collection;
 
         public ActivityService(DataAccess db)
         {
             this.db = db;
             Collection = db.ConnectToMongo<Activity>(ActivityCollection);
+        }
+
+        public void GetBookedFacilitiesBookingUserTime()
+        {
+            List<Activity> activities = Collection.Find(activity => true).ToList();
+
+            foreach (var activity in activities)
+            {
+                Console.WriteLine($"Booking User: {activity.Citizen.Name}, Facility Name: {activity.Facility.Name}, Timeslot: from {activity.StartTime} to {activity.EndTime}");
+            }
         }
     }
 }

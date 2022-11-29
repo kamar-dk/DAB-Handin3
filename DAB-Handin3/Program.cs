@@ -77,7 +77,7 @@ namespace DAB_Handin3
                     break;
 
                 case 'c':
-                    //Opgave2_3;
+                    _activity.GetBookedFacilitiesBookingUserTime();
                     break;
                 case 'd':
                     //Opgave3_2;
