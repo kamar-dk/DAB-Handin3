@@ -13,16 +13,10 @@ namespace DAB_Handin3.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string MaintenanceId { get; set; }
-
         [BsonElement("Description")]
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        
         public Facility Facility { get; set; }
-
-
-
-        
         public Personnel Personnel { get; set; }
     }
 }
