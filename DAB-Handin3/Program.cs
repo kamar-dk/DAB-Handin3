@@ -94,7 +94,12 @@ namespace DAB_Handin3
 
         public static void SeedData()
         {
-            
+            _activity.DropCollection();
+            _citizen.DropCollection();
+            _facility.DropCollection();
+            _maintenanceLog.DropCollection();
+            _participant.DropCollection();
+            _personnel.DropCollection();
 
             MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs" };
             _maintenanceLog.CreateMaintanceLog(m1);
