@@ -54,10 +54,10 @@ namespace DAB_Handin3.Services
             Collection.InsertOne(activity);
         }
 
-        public void AddParticipant(Participant participant)
+        public void AddParticipant(Activity activity,Participant participant)
         {
-
-            Activity activity = participant.Activity;
+            
+            Console.WriteLine($"Acitivity ID: {activity.ActivityId}");
             activity.Participants.Add(participant);
 
         }

@@ -152,13 +152,13 @@ namespace DAB_Handin3
             _activity.CreateActivity(a2);
 
             Participant p1 = new Participant() {Activity = a1, Cpr = "1234567890" };
-            Participant p2 = new Participant() { Activity = a2, Cpr = "9876543210" };
+            Participant p2 = new Participant() {Activity = a2, Cpr = "9876543210" };
 
             _participant.CreateParticipant(p1);
             _participant.CreateParticipant(p2);
 
-            //_activity.AddParticipant(p1);
-            //_activity.AddParticipant(p2);
+            _activity.AddParticipant(a1, p1);
+            _activity.AddParticipant(a2, p2);
         }
     }
 }
