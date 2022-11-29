@@ -25,5 +25,11 @@ namespace DAB_Handin3.Services
         {
             Collection.InsertOne(maintenanceLog);
         }
+
+        public void DropCollection()
+        {
+            var database = db.GetDatabase();
+            database.DropCollection(MaintenanceLogCollection);
+        }
     }
 }
