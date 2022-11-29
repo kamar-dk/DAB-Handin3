@@ -38,16 +38,8 @@ namespace DAB_Handin3
 
         static void Main(string[] args)
         {
-
             Console.WriteLine("Start");
-            /*
-            _facility = new FacilityService(db);
-            _citizen = new CitizenService(db);
-            _activity = new ActivityService(db);
-            _maintenanceLog = new MaintenanceLogService(db);
-            _participant = new ParticipantService(db);
-            _personnel = new PersonnelService(db);
-            */
+            
             Console.WriteLine("\n" + "SeedData Y/n)");
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
             if (consoleKeyInfo2.KeyChar == 'Y')
