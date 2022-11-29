@@ -59,9 +59,6 @@ namespace DAB_Handin3
                     return;
                 }
             }
-
-            //var results = db.GetAllFacilitys();
-
         }
 
         static void VaelgOpgave( char c)
