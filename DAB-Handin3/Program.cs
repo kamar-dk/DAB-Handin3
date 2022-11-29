@@ -1,6 +1,7 @@
 ﻿using DAB_Handin3.Models;
 using DAB_Handin3.Services;
 using MongoDB.Driver;
+using System.Runtime.Intrinsics.X86;
 
 /*
 string connectionString = "mongodb://localhost:27017";
@@ -44,7 +45,8 @@ namespace DAB_Handin3
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
             if (consoleKeyInfo2.KeyChar == 'Y')
             {
-                //SeedData();
+                SeedData();
+                
             }
 
             while (true)
@@ -77,7 +79,7 @@ namespace DAB_Handin3
                     break;
 
                 case 'c':
-                    //Opgave2_3;
+                    _activity.GetBookedFacilitiesBookingUserTime();
                     break;
                 case 'd':
                     //Opgave3_2;
@@ -86,6 +88,77 @@ namespace DAB_Handin3
                     //Opgave3_3;
                     break;
             }
+        }
+
+        public static void SeedData()
+        {
+            Facility f1 = new Facility() 
+            { 
+                Name = "Uni parken", 
+                Type = "Park", 
+                Latitude = 56.87, 
+                Longitude = 21.20, 
+                Decription = "Uni parken i århus" 
+            };
+            Facility f2 = new Facility()
+            {
+                Name = "Bål plads",
+                Type = "Bål Plads",
+                Latitude = 57.87,
+                Longitude = 22.20,
+                Decription = "Bål plads i hårhus"
+            };
+
+            _facility.CreateFacility(f1);
+            _facility.CreateFacility(f2);
+
+            Citizen c1 = new Citizen()
+            {
+                Name = "Kasper Martensen",
+                Email = "Test@test.dk",
+                Category = "Privat",
+                PhoneNumber = "61616161",
+            };
+            Citizen c2 = new Citizen()
+            {
+                Name = "Rasmus",
+                Email = "Test@Test2.dk",
+                Category = "Privat",
+                PhoneNumber = "00000000"
+            };
+            _citizen.CreateCitizen(c1);
+            _citizen.CreateCitizen(c2);
+
+
+
+            var a1 = new Activity()
+            {
+                StartTime = new DateTime(2022, 11, 11, 8, 30, 00),
+                EndTime = new DateTime(2022, 12, 11, 23, 30, 00),
+                Note = "Bla",
+                Citizen = c1,
+                Facility = f1,
+            };
+            var a2 = new Activity()
+            {
+                StartTime = new DateTime(2022, 11, 11, 8, 30, 00),
+                EndTime = new DateTime(2022, 12, 11, 23, 30, 00),
+                Note = "Bla",
+                Citizen = c2,
+                Facility = f2,
+            };
+
+            _activity.CreateActivity(a1);
+            _activity.CreateActivity(a2);
+
+            Participant p1 = new Participant() {Activity = a1, Cpr = "1234567890" };
+            Participant p2 = new Participant() {Activity = a2, Cpr = "9876543210" };
+
+            _participant.CreateParticipant(p1);
+            _participant.CreateParticipant(p2);
+
+            _activity.AddParticipant(a1, p1);
+            _activity.AddParticipant(a2, p2);
         }
     }
 }

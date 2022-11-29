@@ -20,5 +20,10 @@ namespace DAB_Handin3.Services
             this.db = db;
             Collection = db.ConnectToMongo<Participant>(ParticipantCollection);
         }
+
+        public void CreateParticipant(Participant participant)
+        {
+            Collection.InsertOne(participant);
+        }
     }
 }

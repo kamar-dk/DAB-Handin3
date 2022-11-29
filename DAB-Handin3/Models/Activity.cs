@@ -28,7 +28,7 @@ namespace DAB_Handin3.Models
         //public int FacilityId { get; set; }
         public Facility Facility { get; set; }
 
-        public List<Participant> Participants { get; set; }
+        public List<Participant> Participants { get; set; } = null!;
         
     }
 }
