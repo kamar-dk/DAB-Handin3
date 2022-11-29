@@ -56,6 +56,7 @@ namespace DAB_Handin3
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
                 {
+                    Console.WriteLine();
                     VaelgOpgave(consoleKeyInfo.KeyChar);
                 }
 
@@ -129,7 +130,11 @@ namespace DAB_Handin3
             _citizen.CreateCitizen(c1);
             _citizen.CreateCitizen(c2);
 
+            Participant p1 = new Participant() {Cpr = "1234567890" };
+            Participant p2 = new Participant() {Cpr = "9876543210" };
 
+            _participant.CreateParticipant(p1);
+            _participant.CreateParticipant(p2);
 
             var a1 = new Activity()
             {
@@ -138,6 +143,7 @@ namespace DAB_Handin3
                 Note = "Bla",
                 Citizen = c1,
                 Facility = f1,
+                Participants = new List<Participant> { p1, p2}
             };
             var a2 = new Activity()
             {
@@ -146,19 +152,16 @@ namespace DAB_Handin3
                 Note = "Bla",
                 Citizen = c2,
                 Facility = f2,
+                Participants = new List<Participant> { p2}
             };
 
             _activity.CreateActivity(a1);
             _activity.CreateActivity(a2);
 
-            Participant p1 = new Participant() {Activity = a1, Cpr = "1234567890" };
-            Participant p2 = new Participant() {Activity = a2, Cpr = "9876543210" };
+            
 
-            _participant.CreateParticipant(p1);
-            _participant.CreateParticipant(p2);
-
-            _activity.AddParticipant(a1, p1);
-            _activity.AddParticipant(a2, p2);
+            //_activity.AddParticipant(a1, p1);
+            //_activity.AddParticipant(a2, p2);
         }
     }
 }
