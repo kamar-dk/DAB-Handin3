@@ -13,7 +13,7 @@ namespace DAB_Handin3.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int ActivityId { get; set; }
+        public string ActivityId { get; set; }
         [BsonElement("Start Time")]
         public DateTime StartTime { get; set; }
         [BsonElement("End Time")]
