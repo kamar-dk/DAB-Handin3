@@ -88,15 +88,5 @@ namespace DAB_Handin3
                     break;
             }
         }
-        /*
-        public static void Opgave2_1()
-        {
-            List<Facility> results = db.GetFacilitys();
-            foreach (var result in results)
-            {
-                Console.WriteLine($"Name: {result.Name}, Latitude: {result.Latitude}, Longitude: {result.Longitude}");
-            }
-        }
-        */
     }
 }
