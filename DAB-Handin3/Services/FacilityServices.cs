@@ -21,6 +21,12 @@ namespace DAB_Handin3.Services
             Collection = db.ConnectToMongo<Facility>(FacilityCollection);
         }
 
+        public void CreateFacility(Facility facility)
+        {
+            Collection.InsertOne(facility);
+        }
+
+        // opgave2_1
         public void GetFacilitysNameLocation()
         {   
             List<Facility> facilities = Collection.Find(facility => true).ToList();
