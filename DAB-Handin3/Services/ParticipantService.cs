@@ -25,5 +25,10 @@ namespace DAB_Handin3.Services
         {
             Collection.InsertOne(participant);
         }
+        public void DropCollection()
+        {
+            var database = db.GetDatabase();
+            database.DropCollection(ParticipantCollection);
+        }
     }
 }
