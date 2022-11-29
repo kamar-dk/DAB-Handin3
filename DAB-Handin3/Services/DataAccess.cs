@@ -20,19 +20,14 @@ namespace DAB_Handin3.Services
         private const string FacilityCollection = "Facility";
         private const string CitizenCollection = "Citizen";
         private const string MaintanceLogCollection = "MaintainceLog";
-
+        /*
         public DataAccess()
         {
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(databaseName);
-            //_facilitys = database.GetCollection<Facility>(FacilityCollection);
-            //_citizens = database.GetCollection<Citizen>(CitizenCollection);
-            //_maintenanceLog = database.GetCollection<MaintenanceLog>(MaintanceLogCollection);
-            //var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
 
-            //_facilitys.InsertOne(facility);
         }
-
+        */
         public IMongoCollection<T> ConnectToMongo<T>(in string collection)
         {
             var client = new MongoClient(connectionString);
