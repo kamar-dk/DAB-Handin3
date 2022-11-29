@@ -12,13 +12,18 @@ namespace DAB_Handin3.Services
     {
         DataAccess db;
 
-        private const string MaintenanceLogCollection = "Acticity";
+        private const string MaintenanceLogCollection = "MaintenanceLog";
         private IMongoCollection<MaintenanceLog> Collection;
 
         public MaintenanceLogService(DataAccess db)
         {
             this.db = db;
             Collection = db.ConnectToMongo<MaintenanceLog>(MaintenanceLogCollection);
+        }
+
+        public void CreateMaintanceLog(MaintenanceLog maintenanceLog)
+        {
+            Collection.InsertOne(maintenanceLog);
         }
     }
 }

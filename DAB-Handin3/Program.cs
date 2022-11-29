@@ -48,6 +48,7 @@ namespace DAB_Handin3
                 SeedData();
                 
             }
+            
 
             while (true)
             {
@@ -93,13 +94,19 @@ namespace DAB_Handin3
 
         public static void SeedData()
         {
+            
+
+            MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs" };
+            _maintenanceLog.CreateMaintanceLog(m1);
+
             Facility f1 = new Facility() 
             { 
                 Name = "Uni parken", 
                 Type = "Park", 
                 Latitude = 56.87, 
                 Longitude = 21.20, 
-                Decription = "Uni parken i århus" 
+                Decription = "Uni parken i århus",
+                MaintenanceLogs = new List<MaintenanceLog>() { m1 }
             };
             Facility f2 = new Facility()
             {
@@ -158,10 +165,7 @@ namespace DAB_Handin3
             _activity.CreateActivity(a1);
             _activity.CreateActivity(a2);
 
-            
 
-            //_activity.AddParticipant(a1, p1);
-            //_activity.AddParticipant(a2, p2);
         }
     }
 }

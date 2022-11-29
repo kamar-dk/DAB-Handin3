@@ -59,13 +59,20 @@ namespace DAB_Handin3.Services
             {
                 Console.WriteLine($"Facility Name: {facility.Name}, Maintenance:");
                 var temp = facility.MaintenanceLogs;
-
-                foreach (var act in temp)
+                
+                foreach (var act in temp.EmptyIfNull())
                 {
-                    Console.WriteLine(act);
+                    Console.WriteLine($"Maintance Decription: {act.Description}, Done at date: {act.Date}");
+                    
                 }
             }
             
         }
+    }
+
+    public static class EnumerableExtensions
+    {
+        public static IEnumerable<T> EmptyIfNull<T>(this IEnumerable<T> source) =>
+            source != null ? source : Enumerable.Empty<T>();
     }
 }

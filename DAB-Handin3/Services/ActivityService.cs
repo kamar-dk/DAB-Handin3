@@ -19,6 +19,17 @@ namespace DAB_Handin3.Services
         {
             this.db = db;
             Collection = db.ConnectToMongo<Activity>(ActivityCollection);
+            
+        }
+
+        public void CreateActivity(Activity activity)
+        {
+            Collection.InsertOne(activity);
+        }
+
+        public void DropCollection()
+        {
+            
         }
 
 
@@ -49,10 +60,7 @@ namespace DAB_Handin3.Services
                 }
             }
         }
-        public void CreateActivity(Activity activity)
-        {
-            Collection.InsertOne(activity);
-        }
+        
 
         public void AddParticipant(Activity activity,Participant participant)
         {
