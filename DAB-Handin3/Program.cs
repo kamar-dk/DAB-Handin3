@@ -69,7 +69,7 @@ namespace DAB_Handin3
             switch (c)
             {
                 case 'a':
-                    db.GetFacilitysNameLocation();
+                    //db.GetFacilitysNameLocation();
                     fs.GetFacilitysNameLocation();
                     break;
 
@@ -88,7 +88,7 @@ namespace DAB_Handin3
                     break;
             }
         }
-
+        /*
         public static void Opgave2_1()
         {
             List<Facility> results = db.GetFacilitys();
@@ -97,5 +97,6 @@ namespace DAB_Handin3
                 Console.WriteLine($"Name: {result.Name}, Latitude: {result.Latitude}, Longitude: {result.Longitude}");
             }
         }
+        */
     }
 }

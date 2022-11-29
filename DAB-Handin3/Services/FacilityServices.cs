@@ -12,14 +12,18 @@ namespace DAB_Handin3.Services
     {
         DataAccess db;
 
+        private const string FacilityCollection = "Facility";
+        private IMongoCollection<Facility> Collection;
+
         public FacilityService(DataAccess db)
         {
             this.db = db;
+            Collection = db.ConnectToMongo<Facility>(FacilityCollection);
         }
 
         public void GetFacilitysNameLocation()
-        {
-            List<Facility> facilities = db._facilitys.Find(facility => true).ToList();
+        {   
+            List<Facility> facilities = Collection.Find(facility => true).ToList();
             foreach (var facility in facilities)
             {
                 Console.WriteLine($"Name: {facility.Name}, Latitude: {facility.Latitude}, Longitude: {facility.Longitude}");
@@ -29,7 +33,7 @@ namespace DAB_Handin3.Services
         // opgave2_2
         public void GetFacilitysOrdered()
         {
-            List<Facility> facilities = db._facilitys.Find(facility => true).ToList()
+            List<Facility> facilities = Collection.Find(facility => true).ToList()
                 .OrderBy(facility => facility.Type)
                 .ToList();
 
