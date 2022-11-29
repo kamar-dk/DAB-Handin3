@@ -29,13 +29,18 @@ namespace DAB_Handin3
     public class Program
     {
         public static DataAccess db = new DataAccess();
-        public static FacilityService fs;
+        public static FacilityService _fs;
+        public static CitizenService _cs;
+        public static ActivityService _as;
+
         static void Main(string[] args)
         {
 
             Console.WriteLine("Start");
 
-            fs = new FacilityService(db);
+            _fs = new FacilityService(db);
+            _cs = new CitizenService(db);
+            _as = new ActivityService(db); 
 
             Console.WriteLine("\n" + "SeedData Y/n)");
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
