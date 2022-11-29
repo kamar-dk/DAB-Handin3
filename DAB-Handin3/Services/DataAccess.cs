@@ -32,6 +32,8 @@ namespace DAB_Handin3.Services
             var client = new MongoClient(connectionString);
             var db = client.GetDatabase(databaseName);
             return db.GetCollection<T>(collection);
-        }        
+        }
+        
+        
     }
 }

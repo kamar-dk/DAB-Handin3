@@ -21,6 +21,7 @@ namespace DAB_Handin3.Services
             Collection = db.ConnectToMongo<Activity>(ActivityCollection);
         }
 
+
         public void GetBookedFacilitiesBookingUserTime()
         {
             List<Activity> activities = Collection.Find(activity => true).ToList();
@@ -29,6 +30,18 @@ namespace DAB_Handin3.Services
             {
                 Console.WriteLine($"Booking User: {activity.Citizen.Name}, Facility Name: {activity.Facility.Name}, Timeslot: from {activity.StartTime} to {activity.EndTime}");
             }
+        }
+        public void CreateActivity(Activity activity)
+        {
+            Collection.InsertOne(activity);
+        }
+
+        public void AddParticipant(Participant participant)
+        {
+
+            Activity activity = participant.Activity;
+            activity.Participants.Add(participant);
+
         }
     }
 }
