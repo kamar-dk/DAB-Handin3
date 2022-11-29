@@ -29,7 +29,8 @@ namespace DAB_Handin3.Services
 
         public void DropCollection()
         {
-            
+            var database = db.GetDatabase();
+            database.DropCollection(ActivityCollection);
         }
 
 
