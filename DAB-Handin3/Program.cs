@@ -29,19 +29,19 @@ namespace DAB_Handin3
     public class Program
     {
         public static DataAccess db = new DataAccess();
-        public static FacilityService _fs;
-        public static CitizenService _cs;
-        public static ActivityService _as;
+        public static FacilityService _fs;// = new FacilityService(db);
+        public static CitizenService _cs;// = new CitizenService(db);
+        public static ActivityService _as;// = new ActivityService(db);
 
         static void Main(string[] args)
         {
 
             Console.WriteLine("Start");
-
+            
             _fs = new FacilityService(db);
             _cs = new CitizenService(db);
             _as = new ActivityService(db); 
-
+            
             Console.WriteLine("\n" + "SeedData Y/n)");
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
             if (consoleKeyInfo2.KeyChar == 'Y')
@@ -71,12 +71,11 @@ namespace DAB_Handin3
             switch (c)
             {
                 case 'a':
-                    //db.GetFacilitysNameLocation();
-                    fs.GetFacilitysNameLocation();
+                    _fs.GetFacilitysNameLocation();
                     break;
 
                 case 'b':
-                    fs.GetFacilitysOrdered();
+                    _fs.GetFacilitysOrdered();
                     break;
 
                 case 'c':
