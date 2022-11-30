@@ -146,8 +146,8 @@ namespace DAB_Handin3
             _citizen.CreateCitizen(c1);
             _citizen.CreateCitizen(c2);
 
-            Participant p1 = new Participant() {Cpr = "1234567890" };
-            Participant p2 = new Participant() {Cpr = "9876543210" };
+            Participant p1 = new Participant() {Cpr = "1234567890", Name = "Trine" };
+            Participant p2 = new Participant() {Cpr = "9876543210", Name = "Lasse" };
 
             _participant.CreateParticipant(p1);
             _participant.CreateParticipant(p2);
