@@ -101,7 +101,11 @@ namespace DAB_Handin3
             _participant.DropCollection();
             _personnel.DropCollection();
 
-            MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs" };
+            Personnel per1 = new Personnel() { Name = "Jan"};
+            _personnel.CreatePersonel(per1);
+
+            MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs", Personnel = per1 };
+            
             _maintenanceLog.CreateMaintanceLog(m1);
 
             Facility f1 = new Facility() 

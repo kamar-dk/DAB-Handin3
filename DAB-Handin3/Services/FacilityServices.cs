@@ -67,7 +67,7 @@ namespace DAB_Handin3.Services
                 
                 foreach (var act in temp.EmptyIfNull())
                 {
-                    Console.WriteLine($"Maintance Decription: {act.Description}, Done at date: {act.Date}");
+                    Console.WriteLine($"Maintance Decription: {act.Description}, Done at date: {act.Date}, maintance done by {act.Personnel.Name}");
                     
                 }
             }
