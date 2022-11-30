@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DAB_Handin3.Models
@@ -24,9 +19,7 @@ namespace DAB_Handin3.Models
         [BsonElement("Decription")]
         public string Decription { get; set; }
         //public List<Activity> Activities { get; set; }
-
         public List<MaintenanceLog> MaintenanceLogs { get; set; }
-
 
         public override string ToString()
         {
@@ -39,10 +32,5 @@ namespace DAB_Handin3.Models
                 "Decitption: " + Decription +
                 ")";
         }
-        
-
-
-       
-
     }
 }

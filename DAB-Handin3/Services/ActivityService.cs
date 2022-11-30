@@ -1,10 +1,5 @@
 ﻿using DAB_Handin3.Models;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAB_Handin3.Services
 {
@@ -19,7 +14,6 @@ namespace DAB_Handin3.Services
         {
             this.db = db;
             Collection = db.ConnectToMongo<Activity>(ActivityCollection);
-            
         }
 
         public void CreateActivity(Activity activity)
@@ -32,7 +26,6 @@ namespace DAB_Handin3.Services
             var database = db.GetDatabase();
             database.DropCollection(ActivityCollection);
         }
-
 
         public void GetBookedFacilitiesBookingUserTime()
         {
@@ -50,8 +43,6 @@ namespace DAB_Handin3.Services
 
             foreach (var activity in activities)
             {
-
-
                 Console.WriteLine($"Facility Name: {activity.Facility.Name}, Timeslot: from {activity.StartTime} to {activity.EndTime}, Paticipants");
                 var temp = activity.Participants;
 
@@ -61,14 +52,11 @@ namespace DAB_Handin3.Services
                 }
             }
         }
-        
 
-        public void AddParticipant(Activity activity,Participant participant)
+        public void AddParticipant(Activity activity, Participant participant)
         {
-            
             Console.WriteLine($"Acitivity ID: {activity.ActivityId}");
             activity.Participants.Add(participant);
-
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DAB_Handin3.Models
@@ -12,7 +7,6 @@ namespace DAB_Handin3.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-
         public string CitizenId { get; set; }
 
         [BsonElement("Name")]
@@ -27,15 +21,10 @@ namespace DAB_Handin3.Models
         [BsonElement("Category")]
         public string Category { get; set; }
 
-
         [BsonElement("PhoneNumber")]
         public string PhoneNumber { get; set; }
 
         //[BsonElement("Activities")]
         //public IList<string> Activities { get; set; }
-
-
-
-
     }
 }

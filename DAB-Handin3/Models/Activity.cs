@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DAB_Handin3.Models
@@ -22,13 +16,9 @@ namespace DAB_Handin3.Models
         public string Note { get; set; }
 
         // foreign keys
-        
-       // public int CitizenId { get; set; }
-        public Citizen Citizen { get; set; }
-        //public int FacilityId { get; set; }
-        public Facility Facility { get; set; }
-
+        public Citizen Citizen { get; set; } // public int CitizenId { get; set; }
+        public Facility Facility { get; set; } //public int FacilityId { get; set; }
         public List<Participant> Participants { get; set; } = null!;
-        
+
     }
 }

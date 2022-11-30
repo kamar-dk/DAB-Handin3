@@ -1,29 +1,5 @@
 ﻿using DAB_Handin3.Models;
 using DAB_Handin3.Services;
-using MongoDB.Driver;
-using System.Runtime.Intrinsics.X86;
-
-/*
-string connectionString = "mongodb://localhost:27017";
-string databaseName = "Handin3";
-string collectionName = "Facility";
-
-var client = new MongoClient(connectionString);
-var db = client.GetDatabase(databaseName);
-var collection = db.GetCollection<Facility>(collectionName);
-
-var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
-
-await collection.InsertOneAsync(facility);
-
-var results = await collection.FindAsync(_ => true);
-
-foreach (var result in results.ToList())
-{
-    Console.WriteLine($"{result.FacilityId}");
-}
-*/
-
 
 namespace DAB_Handin3
 {
@@ -40,17 +16,17 @@ namespace DAB_Handin3
         static void Main(string[] args)
         {
             Console.WriteLine("Start");
-            
+
             Console.WriteLine("\n" + "SeedData Y/n)");
             ConsoleKeyInfo consoleKeyInfo2 = Console.ReadKey();
             if (consoleKeyInfo2.KeyChar == 'Y')
             {
                 SeedData();
-                
+
             }
-            
+
             while (true)
-            { 
+            {
                 Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
@@ -66,7 +42,7 @@ namespace DAB_Handin3
             }
         }
 
-        static void VaelgOpgave( char c)
+        static void VaelgOpgave(char c)
         {
             switch (c)
             {
@@ -99,18 +75,18 @@ namespace DAB_Handin3
             _participant.DropCollection();
             _personnel.DropCollection();
 
-            Personnel per1 = new Personnel() { Name = "Jan"};
+            Personnel per1 = new Personnel() { Name = "Jan" };
             _personnel.CreatePersonel(per1);
 
             MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs", Personnel = per1 };
             _maintenanceLog.CreateMaintanceLog(m1);
 
-            Facility f1 = new Facility() 
-            { 
-                Name = "Uni parken", 
-                Type = "Park", 
-                Latitude = 56.87, 
-                Longitude = 21.20, 
+            Facility f1 = new Facility()
+            {
+                Name = "Uni parken",
+                Type = "Park",
+                Latitude = 56.87,
+                Longitude = 21.20,
                 Decription = "Uni parken i århus",
                 MaintenanceLogs = new List<MaintenanceLog>() { m1 }
             };
@@ -161,8 +137,8 @@ namespace DAB_Handin3
             _citizen.CreateCitizen(c1);
             _citizen.CreateCitizen(c2);
 
-            Participant p1 = new Participant() {Cpr = "1234567890", Name = "Trine" };
-            Participant p2 = new Participant() {Cpr = "9876543210", Name = "Lasse" };
+            Participant p1 = new Participant() { Cpr = "1234567890", Name = "Trine" };
+            Participant p2 = new Participant() { Cpr = "9876543210", Name = "Lasse" };
 
             _participant.CreateParticipant(p1);
             _participant.CreateParticipant(p2);
@@ -174,7 +150,7 @@ namespace DAB_Handin3
                 Note = "Bla",
                 Citizen = c1,
                 Facility = f1,
-                Participants = new List<Participant> { p1, p2}
+                Participants = new List<Participant> { p1, p2 }
             };
             var a2 = new Activity()
             {
@@ -183,7 +159,7 @@ namespace DAB_Handin3
                 Note = "Bla",
                 Citizen = c2,
                 Facility = f2,
-                Participants = new List<Participant> { p2}
+                Participants = new List<Participant> { p2 }
             };
 
             _activity.CreateActivity(a1);
@@ -191,3 +167,25 @@ namespace DAB_Handin3
         }
     }
 }
+
+/*
+string connectionString = "mongodb://localhost:27017";
+string databaseName = "Handin3";
+string collectionName = "Facility";
+
+var client = new MongoClient(connectionString);
+var db = client.GetDatabase(databaseName);
+var collection = db.GetCollection<Facility>(collectionName);
+
+var facility = new Facility { Name = "Uniparken", Latitude = 0000, Longitude = 0000, Decription = "Uni park", Type = "Park" };
+
+await collection.InsertOneAsync(facility);
+
+var results = await collection.FindAsync(_ => true);
+
+foreach (var result in results.ToList())
+{
+    Console.WriteLine($"{result.FacilityId}");
+}
+*/
+

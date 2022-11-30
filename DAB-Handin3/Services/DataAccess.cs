@@ -1,13 +1,4 @@
-﻿using DAB_Handin3.Models;
-using MongoDB.Bson.Serialization.IdGenerators;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Driver;
 
 namespace DAB_Handin3.Services
 {
@@ -16,8 +7,9 @@ namespace DAB_Handin3.Services
         private const string connectionString = "mongodb://localhost:27017";
         private const string databaseName = "Handin3";
 
-        private MongoClient client;
+        private MongoClient client; 
         private IMongoDatabase db;
+
         /*public DataAccess()
         {
             var client = new MongoClient(connectionString);

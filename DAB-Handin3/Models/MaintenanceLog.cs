@@ -1,10 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DAB_Handin3.Models
 {
@@ -16,7 +11,7 @@ namespace DAB_Handin3.Models
         [BsonElement("Description")]
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        //public Facility Facility { get; set; }
         public Personnel Personnel { get; set; }
+        //public Facility Facility { get; set; }
     }
 }
