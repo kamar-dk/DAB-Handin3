@@ -125,9 +125,27 @@ namespace DAB_Handin3
                 Longitude = 22.20,
                 Decription = "Bål plads i hårhus"
             };
+            Facility f3 = new Facility()
+            {
+                Name = "Shelter plads 1",
+                Type = "Shelterplads",
+                Latitude = 87.29,
+                Longitude = 22.22,
+                Decription = "Shelter plads 1 somwhere in aarhus"
+            };
+            Facility f4 = new Facility()
+            {
+                Name = "Park 2",
+                Type = "Park",
+                Latitude = 57.64,
+                Longitude = 21.22,
+                Decription = "Park i aarhus"
+            };
 
             _facility.CreateFacility(f1);
             _facility.CreateFacility(f2);
+            _facility.CreateFacility(f3);
+            _facility.CreateFacility(f4);
 
             Citizen c1 = new Citizen()
             {
