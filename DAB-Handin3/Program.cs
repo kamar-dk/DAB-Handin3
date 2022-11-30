@@ -22,7 +22,6 @@ namespace DAB_Handin3
             if (consoleKeyInfo2.KeyChar == 'Y')
             {
                 SeedData();
-
             }
 
             while (true)
