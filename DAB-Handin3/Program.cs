@@ -49,10 +49,8 @@ namespace DAB_Handin3
                 
             }
             
-
             while (true)
-            {
-                
+            { 
                 Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
@@ -105,7 +103,6 @@ namespace DAB_Handin3
             _personnel.CreatePersonel(per1);
 
             MaintenanceLog m1 = new MaintenanceLog() { Date = DateTime.Now, Description = "Slået græs", Personnel = per1 };
-            
             _maintenanceLog.CreateMaintanceLog(m1);
 
             Facility f1 = new Facility() 
@@ -191,8 +188,6 @@ namespace DAB_Handin3
 
             _activity.CreateActivity(a1);
             _activity.CreateActivity(a2);
-
-
         }
     }
 }
