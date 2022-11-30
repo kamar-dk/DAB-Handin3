@@ -128,14 +128,29 @@ namespace DAB_Handin3
             };
             Citizen c2 = new Citizen()
             {
-                Name = "Rasmus",
+                Name = "Rasmus Westergaard",
                 Email = "Test@Test2.dk",
+                Category = "Privat",
+                PhoneNumber = "00000000"
+            };
+            Citizen c3 = new Citizen()
+            {
+                Name = "Heja Hassan",
+                Email = "Auid@uni.au.dk",
+                Category = "Privat",
+                PhoneNumber = "00000000"
+            };
+            Citizen c4 = new Citizen()
+            {
+                Name = "Clara Mouritsen",
+                Email = "auid@uni.au.dk",
                 Category = "Privat",
                 PhoneNumber = "00000000"
             };
             _citizen.CreateCitizen(c1);
             _citizen.CreateCitizen(c2);
-
+            _citizen.CreateCitizen(c3);
+            _citizen.CreateCitizen(c4);
             Participant p1 = new Participant() { Cpr = "1234567890", Name = "Trine" };
             Participant p2 = new Participant() { Cpr = "9876543210", Name = "Lasse" };
 
