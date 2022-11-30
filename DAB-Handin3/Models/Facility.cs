@@ -23,8 +23,7 @@ namespace DAB_Handin3.Models
         public string Type { get; set; }
         [BsonElement("Decription")]
         public string Decription { get; set; }
-        public List<Activity> Activities { get; set; }
-
+        //public List<Activity> Activities { get; set; }
 
         public List<MaintenanceLog> MaintenanceLogs { get; set; }
 

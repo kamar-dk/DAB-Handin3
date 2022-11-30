@@ -31,8 +31,8 @@ namespace DAB_Handin3.Models
         [BsonElement("PhoneNumber")]
         public string PhoneNumber { get; set; }
 
-        [BsonElement("Activities")]
-        public IList<string> Activities { get; set; }
+        //[BsonElement("Activities")]
+        //public IList<string> Activities { get; set; }
 
 
 

@@ -16,7 +16,7 @@ namespace DAB_Handin3.Models
         [BsonElement("Description")]
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        public Facility Facility { get; set; }
+        //public Facility Facility { get; set; }
         public Personnel Personnel { get; set; }
     }
 }

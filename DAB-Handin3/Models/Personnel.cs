@@ -15,6 +15,6 @@ namespace DAB_Handin3.Models
         public string PersId { get; set; }
         [BsonElement("Name")]
         public string Name { get; set; }
-        public List<MaintenanceLog> MaintenanceLogs { get; set; }
+        //public List<MaintenanceLog> MaintenanceLogs { get; set; }
     }
 }
