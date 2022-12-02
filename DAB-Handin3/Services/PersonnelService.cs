@@ -20,6 +20,11 @@ namespace DAB_Handin3.Services
             Collection.InsertOne(personnel);
         }
 
+        public void CreateManuPersonel(List<Personnel> personnelList)
+        {
+            Collection.InsertMany(personnelList);
+        }
+
         public void DropCollection()
         {
             var database = db.GetDatabase();

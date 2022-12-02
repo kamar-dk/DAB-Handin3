@@ -19,6 +19,11 @@ namespace DAB_Handin3.Services
         {
             Collection.InsertOne(citizen);
         }
+        public void CreateManyCitizen(Citizen[] citizens/*, List<Citizen> citizenList*/)
+        {
+            Collection.InsertMany(citizens);
+            
+        }
 
         public void DropCollection()
         {

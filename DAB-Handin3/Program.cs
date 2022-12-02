@@ -26,8 +26,10 @@ namespace DAB_Handin3
 
             while (true)
             {
+                _facility.InsertMaintanceLog();
                 Console.WriteLine("\n" + "Vis Opgave2_1(a) Opgave2_2(b), Opgave2_3(c), Opgave3_2(d), Opgave3_3(e)");
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
+                
                 if (consoleKeyInfo.KeyChar == 'a' || consoleKeyInfo.KeyChar == 'b' || consoleKeyInfo.KeyChar == 'c' || consoleKeyInfo.KeyChar == 'd' || consoleKeyInfo.KeyChar == 'e')
                 {
                     Console.WriteLine();
@@ -147,10 +149,12 @@ namespace DAB_Handin3
                 Category = "Privat",
                 PhoneNumber = "00000000"
             };
-            _citizen.CreateCitizen(c1);
+            /*_citizen.CreateCitizen(c1);
             _citizen.CreateCitizen(c2);
             _citizen.CreateCitizen(c3);
-            _citizen.CreateCitizen(c4);
+            _citizen.CreateCitizen(c4);*/
+            _citizen.CreateManyCitizen(new Citizen[] { c1, c2, c3, c4});
+
             Participant p1 = new Participant() { Cpr = "1234567890", Name = "Trine" };
             Participant p2 = new Participant() { Cpr = "9876543210", Name = "Lasse" };
 

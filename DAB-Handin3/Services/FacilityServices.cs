@@ -25,6 +25,32 @@ namespace DAB_Handin3.Services
             Collection.InsertOne(facility);
         }
 
+        public void CreateManyFacility(Facility[] facilities/*, List<Citizen> citizenList*/)
+        {
+            Collection.InsertMany(facilities);
+        }
+
+        public void InsertMaintanceLog()
+        {
+            string facName;
+            Console.WriteLine("input the name of the facility you want");
+            facName = Console.ReadLine();
+
+            List<Facility> facilities = Collection.Find(facility => true).ToList();
+
+            var item = facilities.FirstOrDefault(f => f.Name == facName);
+            if (item != null)
+            {
+                Console.WriteLine("indsæt beskrivelse");
+                item.MaintenanceLogs.Add(new MaintenanceLog { Date = DateTime.Now, Description = Console.ReadLine() });
+                
+                //Console.WriteLine($"Found facility of name {item}");
+            }
+
+
+
+        }
+
         // opgave2_1
         public void GetFacilitysNameLocation()
         {
